@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * To change this license header, choose License Headers in Project Properties. To change this
+ * template file, choose Tools | Templates and open the template in the editor.
  */
 package dev.nklab.jl2.web.logging;
 
@@ -37,11 +36,17 @@ public class Logger {
         log(Level.INFO, messages, name);
     }
 
+    public void warn(String name, Tuples.Tuple2<String, String>... messages) {
+        log(Level.WARNING, messages, name);
+    }
+
+    public void severe(Throwable throwable) {
+        logger.log(Level.SEVERE, throwable.toString(), throwable);
+    }
+
     private void log(Level level, Tuples.Tuple2<String, String>[] messages, String name) {
-        var msg = String.join(",",
-                Arrays.stream(messages)
-                        .map(x -> x._1() + ":" + x._2())
-                        .collect(Collectors.toList()));
+        var msg = String.join(",", Arrays.stream(messages).map(x -> x._1() + ":" + x._2())
+                .collect(Collectors.toList()));
 
         logger.log(level, "event:" + name + "," + msg);
     }

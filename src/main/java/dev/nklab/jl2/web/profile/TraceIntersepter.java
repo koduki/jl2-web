@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * To change this license header, choose License Headers in Project Properties. To change this
+ * template file, choose Tools | Templates and open the template in the editor.
  */
 package dev.nklab.jl2.web.profile;
 
@@ -25,12 +24,13 @@ public class TraceIntersepter {
 
     @AroundInvoke
     public Object invoke(InvocationContext ic) throws Exception {
-        var classAndMethod = ic.getTarget().getClass()
-                .getSuperclass().getName()
-                + "#" + ic.getMethod().getName();
+        var classAndMethod = ic.getTarget().getClass().getSuperclass().getName() + "#"
+                + ic.getMethod().getName();
         return DistributedTracer.trace().isTrace(isTrace).apply(classAndMethod, (t) -> {
             try {
                 return ic.proceed();
+            } catch (RuntimeException ex) {
+                throw ex;
             } catch (Exception ex) {
                 throw new RuntimeException(ex);
             }
