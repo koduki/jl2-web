@@ -53,7 +53,7 @@
             <dependency>
                 <groupId>com.google.cloud</groupId>
                 <artifactId>libraries-bom</artifactId>
-                <version>7.0.0</version>
+                <version>20.1.0</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -63,17 +63,12 @@
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-core</artifactId>
-            <version>1.7.0.Final</version>
+            <version>1.13.2.Final</version>
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-undertow</artifactId>
-            <version>1.7.0.Final</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.cloud</groupId>
-            <artifactId>google-cloud-tasks</artifactId>
-            <version>1.30.0</version>
+            <version>1.13.2.Final</version>
         </dependency>
         <dependency>
             <groupId>dev.nklab.jl2</groupId>
@@ -81,29 +76,26 @@
             <version>0.2-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>io.opencensus</groupId>
-            <artifactId>opencensus-impl</artifactId>
-            <version>0.27.0</version>
-            <scope>runtime</scope>
+            <groupId>com.google.cloud</groupId>
+            <artifactId>google-cloud-tasks</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.opencensus</groupId>
-            <artifactId>opencensus-impl-core</artifactId>
-            <version>0.27.0</version>
-        </dependency>
-        <dependency>
-            <groupId>io.opencensus</groupId>
-            <artifactId>opencensus-exporter-trace-stackdriver</artifactId>
-            <version>0.27.0</version>
-        </dependency>
-        <dependency>
-            <groupId>io.opencensus</groupId>
-            <artifactId>opencensus-contrib-http-jaxrs</artifactId>
-            <version>0.27.0</version>
+            <groupId>com.google.cloud</groupId>
+            <artifactId>google-cloud-trace</artifactId>
         </dependency>
         <dependency>
             <groupId>com.google.cloud</groupId>
             <artifactId>google-cloud-datastore</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.opencensus</groupId>
+            <artifactId>opencensus-exporter-trace-stackdriver</artifactId>
+            <version>0.28.3</version>
+        </dependency>
+        <dependency>
+            <groupId>io.opencensus</groupId>
+            <artifactId>opencensus-impl-core</artifactId>
+            <version>0.28.3</version>
         </dependency>
     </dependencies>
 </project>
