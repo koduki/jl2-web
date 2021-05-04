@@ -49,7 +49,7 @@ public class DistributedTracer {
         }
     };
 
-    private boolean isTrace = true;
+    private boolean isTrace = false;
 
     private DistributedTracer() {
 
